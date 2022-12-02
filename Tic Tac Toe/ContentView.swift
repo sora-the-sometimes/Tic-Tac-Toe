@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  Tic Tac Toe
+//  tic tac toe
 //
-//  Created by Sora on 12/2/22.
+//  Created by Sora on 10/31/22.
 //
 
 import SwiftUI
@@ -10,12 +10,23 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
+            Text("Tic Tac Toe")
+                .preferredColorScheme(.dark)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            VStack {
+                LazyVGrid(columns: Array(repeating: GridItem(.fixed(120), spacing: 15), count: 3), spacing: 15) {
+                    Text("X")
+                    Text("X")
+                    Text("X")
+                    Text("X")
+                    Text("X")
+                    Text("X")
+                    Text("X")
+                    Text("X")
+                    Text("X")
+                }
+            }
         }
-        .padding()
     }
 }
 
