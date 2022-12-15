@@ -29,12 +29,15 @@ struct ContentView: View {
                         .frame(width: 120, height: 120, alignment: .center)
                         .cornerRadius(30)
                         .onTapGesture {
-                           
                             withAnimation(.default) {
                                 moves[index] = xTurn ? "X" : "O"
                                 xTurn.toggle()
                             }
                         }
+                        .rotation3DEffect(
+                            .init(degrees: moves[index] != "" ? 180 : 0),
+                            axis: (x: 0.0, y: 1.0, z: 0.0)
+                        )
                     }
                 }
             }
